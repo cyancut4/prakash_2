@@ -28,7 +28,7 @@ export const Route = createFileRoute("/about")({
 const stats = [
   { icon: Award, value: "1970s", label: "Established" },
   { icon: Building2, value: "20,000 sq ft", label: "Manufacturing facility" },
-  { icon: Users, value: "25+ Years", label: "Serving customers" },
+  { icon: Users, value: "35+ years", label: "Serving customers" },
 ];
 
 const products = [
@@ -67,11 +67,11 @@ const leadership = [
     image: "/images/about/late-shree-fagunmal-valecha.jpg",
   },
   {
-    name: "Prakash Valecha",
+    name: "Vinod Valecha",
     image: "/images/about/prakash-valecha.png",
   },
   {
-    name: "Vinod Valecha",
+    name: "Prakash Valecha",
     image: "/images/about/vinod-valecha.webp",
   },
 ];
@@ -114,7 +114,7 @@ function AboutPage() {
       <section className="container-x py-12">
         <div className="text-center">
           <p className="text-secondary text-xs font-bold tracking-[0.2em] uppercase">Our People</p>
-          <h2 className="font-display mt-1 text-3xl font-bold">The People Behind Prakash</h2>
+          <h2 className="font-display mt-1 text-3xl font-bold">The People Behind Prakash Food Products</h2>
         </div>
         <div className="mx-auto mt-8 grid max-w-4xl gap-6 sm:grid-cols-3">
           {leadership.map((person) => (
@@ -137,7 +137,7 @@ function AboutPage() {
         <p className="text-secondary text-xs font-bold tracking-[0.2em] uppercase">What we make</p>
         <h2 className="font-display mt-1 text-3xl font-bold">Our Products</h2>
         <p className="text-muted-foreground mt-3 max-w-2xl text-sm leading-relaxed">
-          Our diverse product range spans bakery staples and confectionery, and we continuously work on expanding it to meet changing customer preferences and market demands.
+          Our diverse product range spans bakery staples and chocolate, and we continuously work on expanding it to meet changing customer preferences and market demands.
         </p>
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {products.map((p) => (
@@ -178,7 +178,7 @@ function AboutPage() {
           <div>
             <p className="text-secondary text-xs font-bold tracking-[0.2em] uppercase">Who we serve</p>
             <h2 className="font-display mt-1 text-2xl font-bold">
-              Serving customers across industries for 25+ years.
+              Serving customers across industries for 35+ years.
             </h2>
             <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
               We supply our products to a wide range of customers and businesses, with a focus on quality products backed by reliable and prompt service.
@@ -216,6 +216,9 @@ function AboutPage() {
               </span>
               <span className="bg-primary text-primary-foreground rounded-lg px-4 py-2 text-sm font-bold tracking-wide">
                 Choco Delicio
+              </span>
+              <span className="bg-primary text-primary-foreground rounded-lg px-4 py-2 text-sm font-bold tracking-wide">
+                Five Seasons Premium Chocolates
               </span>
             </div>
           </div>

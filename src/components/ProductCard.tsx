@@ -7,9 +7,9 @@ import { formatINR } from "@/lib/store/cart";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="card-soft group overflow-hidden"
+      whileHover={{ y: -8, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className="card-soft group overflow-hidden transition-shadow hover:shadow-xl hover:shadow-primary/5"
     >
       <Link
         to="/product/$slug"

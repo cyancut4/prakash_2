@@ -39,8 +39,7 @@ const trust = [
 const stats = [
   { icon: Award, value: "1970s", label: "Established" },
   { icon: Building2, value: "20,000 sq ft", label: "Manufacturing facility" },
-  { icon: Users, value: "25+ Years", label: "Serving customers" },
-  { icon: Package, value: "8+", label: "Product categories" },
+  { icon: Users, value: "35+ years", label: "Serving customers" },
 ];
 
 const vision = ["Quality Products", "Consistent Taste", "Innovation", "Reliable Service", "Customer Satisfaction"];
@@ -117,7 +116,7 @@ function Home() {
                   <Award className="text-primary h-5 w-5" />
                 </div>
                 <div>
-                  <p className="font-display text-lg leading-none font-bold">25+ Years</p>
+                  <p className="font-display text-lg leading-none font-bold">35+ years</p>
                   <p className="text-muted-foreground mt-1 text-[11px] font-medium">of trusted quality</p>
                 </div>
               </motion.div>
@@ -130,15 +129,15 @@ function Home() {
           {trust.map((t, i) => (
             <motion.div
               key={t.title}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ y: -3 }}
-              className="card-soft flex flex-col items-center gap-3 p-5 text-center"
+              transition={{ delay: i * 0.1, type: "spring", stiffness: 300, damping: 20 }}
+              whileHover={{ y: -5, scale: 1.05 }}
+              className="card-soft group flex flex-col items-center gap-3 p-5 text-center shadow-md transition-shadow hover:shadow-xl hover:shadow-primary/10"
             >
-              <span className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-full">
-                <t.icon className="text-primary h-5 w-5" />
+              <span className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-full transition-all group-hover:scale-110 group-hover:bg-primary/20 group-hover:shadow-inner">
+                <t.icon className="text-primary h-5 w-5 transition-transform group-hover:scale-110" />
               </span>
               <span className="text-xs leading-tight font-semibold sm:text-sm">
                 {t.title}
@@ -150,9 +149,9 @@ function Home() {
 
       {/* STATS BAND */}
       <section className="bg-primary text-primary-foreground py-10 lg:py-12">
-        <div className="container-x grid grid-cols-2 gap-6 sm:grid-cols-4 sm:divide-x sm:divide-primary-foreground/20">
+        <div className="container-x flex flex-col items-center justify-center gap-10 sm:flex-row sm:divide-x sm:divide-primary-foreground/20">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-1.5 px-2 text-center">
+            <div key={s.label} className="flex w-full flex-col items-center gap-1.5 sm:w-auto sm:px-12 md:px-16 text-center">
               <s.icon className="h-5 w-5 opacity-80" />
               <span className="font-display text-2xl font-bold sm:text-3xl">{s.value}</span>
               <span className="text-primary-foreground/75 text-[11px] font-medium tracking-wide uppercase sm:text-xs">
@@ -214,11 +213,12 @@ function Home() {
             return (
               <motion.div
                 key={c.slug}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ y: -4 }}
+                transition={{ delay: i * 0.1, type: "spring", stiffness: 200, damping: 20 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="z-10"
               >
                 <Link
                   to="/shop/$slug"
@@ -261,16 +261,18 @@ function Home() {
             Built on consistent quality, hard work and customer trust — freshly made and delivered from our ovens to your table.
           </p>
 
-          <div className="relative mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2.5">
-            {vision.map((v) => (
-              <span
-                key={v}
-                className="bg-background/15 flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold"
-              >
-                <CheckCircle2 className="h-3.5 w-3.5" />
-                {v}
-              </span>
-            ))}
+          <div className="relative mx-auto mt-8 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div className="flex w-max animate-marquee gap-3">
+              {[...vision, ...vision, ...vision, ...vision, ...vision, ...vision].map((v, i) => (
+                <span
+                  key={`${v}-${i}`}
+                  className="bg-background/15 flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold backdrop-blur-md transition-colors hover:bg-background/25 hover:shadow-md"
+                >
+                  <CheckCircle2 className="h-4 w-4" />
+                  {v}
+                </span>
+              ))}
+            </div>
           </div>
 
           <Link
