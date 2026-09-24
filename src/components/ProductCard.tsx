@@ -42,11 +42,8 @@ export function ProductCard({ product }: { product: Product }) {
           <span>({product.reviews})</span>
         </div>
         <div className="mt-3 flex items-baseline gap-1">
-          <span className="text-primary text-base font-bold">
-            {formatINR(product.price)}
-          </span>
-          <span className="text-muted-foreground text-[11px]">
-            / {product.unit}
+          <span className="text-muted-foreground text-xs font-medium">
+            Size: {product.unit}
           </span>
         </div>
       </div>

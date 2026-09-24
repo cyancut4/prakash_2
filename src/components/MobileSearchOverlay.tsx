@@ -77,7 +77,6 @@ export function MobileSearchOverlay({
                 >
                   <img src={p.image} alt="" className="h-12 w-12 shrink-0 rounded-md object-cover" />
                   <span className="line-clamp-1 flex-1 text-sm font-medium">{p.name}</span>
-                  <span className="text-primary shrink-0 text-xs font-semibold">{formatINR(p.price)}</span>
                 </Link>
               </li>
             ))}

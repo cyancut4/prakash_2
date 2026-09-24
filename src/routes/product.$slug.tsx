@@ -97,9 +97,7 @@ function ProductPage() {
             <span className="text-muted-foreground">({product.reviews} Reviews)</span>
           </div>
           <div className="mt-5">
-            <span className="text-primary text-3xl font-bold">{formatINR(unitPrice)}</span>
-            <span className="text-muted-foreground ml-2 text-sm">/ {option.label}</span>
-            <span className="text-muted-foreground mt-1 block text-xs">(inclusive of all taxes)</span>
+            <span className="text-muted-foreground text-sm font-medium">Size: {option.label}</span>
           </div>
           <p className="text-muted-foreground mt-5 text-sm leading-relaxed">{product.description}</p>
 
@@ -136,27 +134,26 @@ function ProductPage() {
               </div>
             ))}
           </div>
+
+          {/* Info */}
+          <div className="mt-8 grid gap-6 rounded-2xl bg-secondary/5 p-6">
+            <div>
+              <h4 className="text-secondary mb-1 text-xs font-bold tracking-wider uppercase">Ingredients</h4>
+              <p className="text-muted-foreground text-sm">{product.ingredients}</p>
+            </div>
+            <div>
+              <h4 className="text-secondary mb-1 text-xs font-bold tracking-wider uppercase">Storage</h4>
+              <p className="text-muted-foreground text-sm">{product.storage}</p>
+            </div>
+            <div>
+              <h4 className="text-secondary mb-1 text-xs font-bold tracking-wider uppercase">Nutrition</h4>
+              <p className="text-muted-foreground text-sm">{product.nutrition}</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Info */}
-      <section className="mt-14">
-        <h2 className="font-display mb-4 text-xl font-bold">Product Information</h2>
-        <div className="card-soft grid gap-6 p-6 md:grid-cols-3">
-          <div>
-            <h4 className="text-secondary mb-1 text-xs font-bold tracking-wider uppercase">Ingredients</h4>
-            <p className="text-muted-foreground text-sm">{product.ingredients}</p>
-          </div>
-          <div>
-            <h4 className="text-secondary mb-1 text-xs font-bold tracking-wider uppercase">Storage</h4>
-            <p className="text-muted-foreground text-sm">{product.storage}</p>
-          </div>
-          <div>
-            <h4 className="text-secondary mb-1 text-xs font-bold tracking-wider uppercase">Nutrition</h4>
-            <p className="text-muted-foreground text-sm">{product.nutrition}</p>
-          </div>
-        </div>
-      </section>
+
 
       {/* Related */}
       {related.length > 0 && (

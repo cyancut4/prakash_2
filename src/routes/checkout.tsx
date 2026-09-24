@@ -130,15 +130,10 @@ function CheckoutPage() {
                   <p className="text-sm font-semibold">{i.name}</p>
                   <p className="text-muted-foreground text-xs">{i.weight} × {i.qty}</p>
                 </div>
-                <span className="text-sm font-semibold">{formatINR(i.unitPrice * i.qty)}</span>
               </li>
             ))}
           </ul>
-          <dl className="border-border mt-5 space-y-2 border-t pt-5 text-sm">
-            <div className="flex justify-between"><dt className="text-muted-foreground">Subtotal</dt><dd>{formatINR(subtotal)}</dd></div>
-            <div className="flex justify-between"><dt className="text-muted-foreground">Shipping</dt><dd>{formatINR(shipping)}</dd></div>
-            <div className="border-border flex justify-between border-t pt-3 text-base"><dt className="font-bold">Total</dt><dd className="text-primary font-bold">{formatINR(total)}</dd></div>
-          </dl>
+          <div className="mt-5 border-t border-border pt-5"></div>
           <button
             type="submit"
             className="bg-primary text-primary-foreground hover:bg-primary/90 mt-5 w-full rounded-lg py-3.5 text-sm font-bold tracking-wider uppercase"

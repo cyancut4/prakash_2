@@ -63,9 +63,6 @@ function CartPage() {
                     <h3 className="text-sm font-semibold sm:text-base">{item.name}</h3>
                     <p className="text-muted-foreground mt-0.5 text-xs">{item.weight}</p>
                   </div>
-                  <span className="text-primary text-sm font-bold sm:text-base">
-                    {formatINR(item.unitPrice * item.qty)}
-                  </span>
                 </div>
                 <div className="mt-auto flex items-center justify-between pt-3">
                   <div className="border-border inline-flex items-center rounded-lg border">
@@ -112,20 +109,6 @@ function CartPage() {
           </div>
 
           <div className="card-soft p-5">
-            <dl className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <dt className="text-muted-foreground">Subtotal</dt>
-                <dd className="font-semibold">{formatINR(subtotal)}</dd>
-              </div>
-              <div className="flex justify-between">
-                <dt className="text-muted-foreground">Shipping</dt>
-                <dd className="font-semibold">{formatINR(shipping)}</dd>
-              </div>
-              <div className="border-border flex justify-between border-t pt-3 text-base">
-                <dt className="font-bold">Total</dt>
-                <dd className="text-primary font-bold">{formatINR(total)}</dd>
-              </div>
-            </dl>
             <Link
               to="/checkout"
               className="bg-primary text-primary-foreground hover:bg-primary/90 mt-5 block w-full rounded-lg py-3.5 text-center text-sm font-bold tracking-wider uppercase"

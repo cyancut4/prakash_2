@@ -84,9 +84,6 @@ export function SearchBox() {
                         <span className="line-clamp-1 flex-1 text-sm font-medium">
                           {p.name}
                         </span>
-                        <span className="text-primary shrink-0 text-xs font-semibold">
-                          {formatINR(p.price)}
-                        </span>
                       </Link>
                     </li>
                   ))}

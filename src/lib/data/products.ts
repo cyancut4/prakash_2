@@ -20,7 +20,8 @@ export type CategorySlug =
   | "khari-puffs"
   | "toast-rusk"
   | "snacks"
-  | "chocolates";
+  | "chocolates"
+  | "cookies";
 
 export interface Category {
   slug: CategorySlug;
@@ -32,11 +33,12 @@ export const categories: Category[] = [
   { slug: "dry-cakes", name: "Dry Cakes", image: "/images/products/Mawa-Cake-Eggless.jpg" },
   { slug: "fresh-cream-pastries", name: "Fresh Cream Pastries", image: "/images/products/Black-Forest-Pastry.jpg" },
   { slug: "birthday-cakes", name: "Birthday Cakes", image: "/images/products/Chocolate-Truffle-Cake.jpg" },
-  { slug: "breads-pav", name: "Breads & Pav", image: "/images/products/Sliced-Bread%20-400GM%20-Kellory.jpg" },
+  { slug: "breads-pav", name: "Breads & Pav", image: "/images/products/slicedbrade.png" },
   { slug: "khari-puffs", name: "Khari Puffs", image: "/images/products/Cheese-Khari.jpg" },
   { slug: "toast-rusk", name: "Toast & Rusk", image: "/images/products/Mawa-Toast.jpg" },
-  { slug: "snacks", name: "Snacks", image: cookies },
-  { slug: "chocolates", name: "Chocolates", image: giftbox },
+  { slug: "snacks", name: "Snacks", image: "/images/products/Samosa.png" },
+  { slug: "chocolates", name: "Chocolates", image: "/images/products/Premium Assorted Chocolate Collection  Gift Box.png" },
+  { slug: "cookies", name: "Cookies", image: cookies },
 ];
 
 // Placeholder images reused per category until real product photos are supplied.
@@ -49,6 +51,7 @@ const IMG: Record<CategorySlug, string[]> = {
   "toast-rusk": [sourdough, cinnamon],
   "snacks": [cookies, donut],
   "chocolates": [giftbox, macaron, chococake],
+  "cookies": [cookies, macaron],
 };
 
 const imgFor = (category: CategorySlug, i: number) =>
@@ -90,13 +93,13 @@ const productImages: Record<string, string> = {
   "white-forest-cake": "/images/products/White-Forest-Cake.jpg",
   "orange-cake": "/images/products/Orange-Cake.jpg",
   "choco-chips-cake": "/images/products/Choco-Chips-Cake.jpg",
-  "sliced-bread-400g-kellory": "/images/products/Sliced-Bread%20-400GM%20-Kellory.jpg",
-  "sliced-bread-700g-kellory": "/images/products/Sliced-Bread%20-700GM%20-Kellory.jpg",
-  "brown-bread-400g-kellory": "/images/products/Brown-Bread%20-400GM%20-Kellory.jpg",
+  "sliced-bread-400g": "/images/products/slicedbrade.png",
+  "sliced-bread-700g": "/images/products/scliedbread700gm.png",
+  "brown-bread-400g": "/images/products/brownbread.png",
   "pav-12-pc": "/images/products/Pav%20-12PC.jpg",
   "burger-buns-6-pc": "/images/products/Burger-Buns-6PC.jpg",
   "garlic-bread-200g": "/images/products/Garlic-Bread-200GM.jpg",
-  "pizza-base-2-pc-kellory": "/images/products/Pizza-Base-2PC-Kellory.jpg",
+  "pizza-base-2-pc": "/images/products/pizzabase.png",
   "plain-khari": "/images/products/Plain-Khari.jpg",
   "methi-khari": "/images/products/Methi-Khari.jpg",
   "palak-khari": "/images/products/Palak-Khari.jpg",
@@ -109,6 +112,34 @@ const productImages: Record<string, string> = {
   "milk-toast": "/images/products/Milk-Toast-500GM.jpg",
   "tilli-toast": "/images/products/Tilli-Toast.jpg",
   "mawa-toast": "/images/products/Mawa-Toast.jpg",
+  "veg-pattice": "/images/products/Veg Pattie.png",
+  "roll-butter-toast": "/images/products/Roll Butter (2).png",
+  "roasted-almond-chocolates-jar": "/images/products/Roasted Almond Chocolates  Jar.png",
+  "date-and-walnut-chocolates-jar": "/images/products/Date And Walnut Chocolates  Jar.png",
+  "premium-assorted-chocolate-collection-gift-box": "/images/products/Premium Assorted Chocolate Collection  Gift Box.png",
+  "raisin-chocolates-jar": "/images/products/Raisin Chocolates  Jar.png",
+  "milky-choco-almond-jar": "/images/products/Milky Choco Almond  Jar.png",
+  "choco-almond-strawberry-jar": "/images/products/Choco Almond Strawberry Jar.png",
+  "choco-almond-mango-jar": "/images/products/Choco Almond Mango  Jar.png",
+  "choco-almond-orange-jar": "/images/products/Choco Almond Orange  Jar.png",
+  "bar-chocolate-almond": "/images/products/Bar Chocolate Almond.png",
+  "bar-chocolate-dark": "/images/products/Bar Chocolate Dark.png",
+  "dark-chocolate-almond-nutties": "/images/products/Dark Chocolate Almond Nutties.png",
+  "premium-chocolate-bar-box-gift-box": "/images/products/Premium Chocolate Bar Box  Gift Box.png",
+  "premium-chocolate-gift-box": "/images/products/Premium Chocolate  Gift Box make a proper image.png",
+  "veg-burger": "/images/products/Veg Burger.png",
+  "veg-soya-sandwich": "/images/products/Veg Soya Sandwich.png",
+  "bar-chocolate-milk": "/images/products/Bar Chocolate Milk.png",
+  "bar-chocolate-fruit-n-nuts": "/images/products/Bar Chocolate Fruit N Nuts.png",
+  "veg-mini-pizza": "/images/products/Veg Mini Pizza.png",
+  "paneer-pattice": "/images/products/Paneer Pattie.png",
+  "kachori": "/images/products/Kachori.png",
+  "samosa": "/images/products/Samosa.png",
+  "maggi-pattice": "/images/products/Maggi Pattie.png",
+  "butter-cookies": "/images/products/Butter Cookies.jpg",
+  "choco-chip-cookies": "/images/products/Choco Chip Cookies.jpg",
+  "oatmeal-raisin-cookies": "/images/products/Oatmeal Raisin Cookies.jpg",
+  "almond-biscotti": "/images/products/Almond Biscotti.jpg",
 };
 
 export interface PriceOption {
@@ -220,13 +251,13 @@ export const products: Product[] = [
   p("Choco Chips Cake", "birthday-cakes", [{ label: "1/2 Kg", price: 350 }, { label: "1 Kg", price: 700 }], "Vanilla-chocolate sponge loaded with chocolate chips."),
 
   // Breads & Pav
-  p("Sliced Bread 400g (Kellory)", "breads-pav", pc(30), "Soft everyday sliced bread loaf, 400g."),
-  p("Sliced Bread 700g (Kellory)", "breads-pav", pc(50), "Family-size soft sliced bread loaf, 700g."),
-  p("Brown Bread 400g (Kellory)", "breads-pav", pc(32), "Wholesome soft brown bread loaf, 400g."),
+  p("Sliced Bread 400g", "breads-pav", pc(30), "Soft everyday sliced bread loaf, 400g."),
+  p("Sliced Bread 700g", "breads-pav", pc(50), "Family-size soft sliced bread loaf, 700g."),
+  p("Brown Bread 400g", "breads-pav", pc(32), "Wholesome soft brown bread loaf, 400g."),
   p("Pav (12 Pc)", "breads-pav", pack(12, 30), "Soft dinner pav rolls, a pack of 12."),
   p("Burger Buns (6 Pc)", "breads-pav", pack(6, 36), "Soft sesame-topped burger buns, a pack of 6."),
   p("Garlic Bread 200g", "breads-pav", wt("200g", 40), "Soft bread loaf infused with garlic and herbs."),
-  p("Pizza Base (2 Pc, Kellory)", "breads-pav", pack(2, 25), "Ready-to-top pizza bases, a pack of 2."),
+  p("Pizza Base (2 Pc)", "breads-pav", pack(2, 25), "Ready-to-top pizza bases, a pack of 2."),
 
   // Khari Puffs
   p("Plain Khari", "khari-puffs", wt("250g", 45), "Flaky, buttery layered puff biscuits."),
@@ -257,8 +288,6 @@ export const products: Product[] = [
   p("Veg Burger", "snacks", pc(35), "Soft bun burger with a crisp vegetable patty.", true),
 
   // Chocolates
-  p("Big Lolly (30g)", "chocolates", pc(40), "Classic chocolate lollipop, 30g."),
-  p("Medium Lolly (17g)", "chocolates", pc(20), "Classic chocolate lollipop, 17g."),
   p("Bar Chocolate Milk", "chocolates", [{ label: "50g", price: 55 }, { label: "90g", price: 95 }], "Smooth, creamy milk chocolate bar."),
   p("Bar Chocolate Fruit N Nuts", "chocolates", [{ label: "50g", price: 55 }, { label: "90g", price: 95 }], "Milk chocolate bar loaded with fruit and nuts."),
   p("Bar Chocolate Almond", "chocolates", [{ label: "50g", price: 55 }, { label: "90g", price: 95 }], "Milk chocolate bar studded with roasted almonds."),
@@ -273,8 +302,13 @@ export const products: Product[] = [
   p("Raisin Chocolates (Jar)", "chocolates", wt("Jar of 60 Pcs", 600), "Chocolate-coated raisins, jar of 60."),
   p("Date and Walnut Chocolates (Jar)", "chocolates", wt("Jar of 60 Pcs", 600), "Chocolate-coated dates and walnuts, jar of 60."),
   p("Roasted Almond Chocolates (Jar)", "chocolates", [{ label: "Jar of 60 Pcs", price: 600 }, { label: "Jar of 80 Pcs", price: 400 }], "Chocolate-coated roasted almonds."),
-  p("Anjeer Pista Chocolates (Jar)", "chocolates", wt("Jar of 60 Pcs", 600), "Chocolate-coated fig and pistachio, jar of 60."),
   p("Premium Assorted Chocolate Collection (Gift Box)", "chocolates", wt("140g", 185), "A curated assortment of premium chocolates in a gift box.", true),
+
+  // Cookies
+  p("Butter Cookies", "cookies", wt("200g", 80), "Classic, melt-in-the-mouth buttery cookies."),
+  p("Choco Chip Cookies", "cookies", wt("200g", 90), "Crispy cookies loaded with dark chocolate chips.", true),
+  p("Oatmeal Raisin Cookies", "cookies", wt("200g", 85), "Wholesome oatmeal cookies studded with sweet raisins."),
+  p("Almond Biscotti", "cookies", wt("150g", 110), "Twice-baked Italian-style cookies packed with roasted almonds."),
 ];
 
 export const bestsellers = products.filter((pr) => pr.bestseller).concat(
