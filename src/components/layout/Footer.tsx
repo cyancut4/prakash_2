@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { categories } from "@/lib/data/products";
 
@@ -14,16 +14,15 @@ export function Footer() {
             boxes, crafted every morning with the finest ingredients.
           </p>
           <div className="mt-5 flex gap-3">
-            {[Instagram, Facebook, Twitter, Youtube].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                aria-label="Social"
-                className="hover:bg-primary hover:text-primary-foreground border-border flex h-9 w-9 items-center justify-center rounded-full border transition-colors"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
+            <a
+              href="https://www.instagram.com/prakashfoodproducts_?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:bg-primary hover:text-primary-foreground border-border flex h-9 w-9 items-center justify-center rounded-full border transition-colors"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
           </div>
         </div>
 

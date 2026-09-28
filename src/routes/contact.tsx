@@ -46,7 +46,7 @@ function ContactPage() {
 
       <div className="mt-10 grid gap-6 lg:grid-cols-3">
         <a
-          href={"https://maps.google.com/?q=" + encodeURIComponent(ADDRESS)}
+          href="https://maps.app.goo.gl/CaefSy4cUjmqNSJ8A"
           target="_blank"
           rel="noopener noreferrer"
           className="card-soft hover:border-primary active:scale-[0.98] block p-6 text-center transition-all hover:shadow-md"
